@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var state = StateController()
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+            Text(state.artistNames)
+            Text(state.lastKnownLocation)
+                .padding()
+            Spacer()
+            Button("Find Music", action: {
+                state.findMusic()
+            })
+        }.onAppear(perform: {
+            state.requestAccessToLocationData()
+            state.getArtists()
+        })
     }
 }
 

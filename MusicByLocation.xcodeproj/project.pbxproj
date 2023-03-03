@@ -14,6 +14,11 @@
 		5047D5D129AFA7160021832F /* MusicByLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5047D5D029AFA7160021832F /* MusicByLocationTests.swift */; };
 		5047D5DB29AFA7170021832F /* MusicByLocationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5047D5DA29AFA7170021832F /* MusicByLocationUITests.swift */; };
 		5047D5DD29AFA7170021832F /* MusicByLocationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5047D5DC29AFA7170021832F /* MusicByLocationUITestsLaunchTests.swift */; };
+		5047D5EA29AFA8530021832F /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5047D5E929AFA8530021832F /* LocationHandler.swift */; };
+		505E568129B10AE0008B7A38 /* CLPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505E568029B10AE0008B7A38 /* CLPlacemark.swift */; };
+		505E568329B10C16008B7A38 /* StateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505E568229B10C16008B7A38 /* StateController.swift */; };
+		505E568829B12011008B7A38 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505E568729B12011008B7A38 /* Artist.swift */; };
+		505E568A29B124F9008B7A38 /* ArtistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505E568929B124F9008B7A38 /* ArtistResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,11 @@
 		5047D5D629AFA7160021832F /* MusicByLocationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicByLocationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5047D5DA29AFA7170021832F /* MusicByLocationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicByLocationUITests.swift; sourceTree = "<group>"; };
 		5047D5DC29AFA7170021832F /* MusicByLocationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicByLocationUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5047D5E929AFA8530021832F /* LocationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandler.swift; sourceTree = "<group>"; };
+		505E568029B10AE0008B7A38 /* CLPlacemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLPlacemark.swift; sourceTree = "<group>"; };
+		505E568229B10C16008B7A38 /* StateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateController.swift; sourceTree = "<group>"; };
+		505E568729B12011008B7A38 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		505E568929B124F9008B7A38 /* ArtistResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +104,14 @@
 		5047D5BE29AFA7140021832F /* MusicByLocation */ = {
 			isa = PBXGroup;
 			children = (
+				505E568429B11FD6008B7A38 /* Model */,
+				505E567F29B10AB6008B7A38 /* Extensions */,
 				5047D5BF29AFA7140021832F /* MusicByLocationApp.swift */,
 				5047D5C129AFA7140021832F /* ContentView.swift */,
 				5047D5C329AFA7160021832F /* Assets.xcassets */,
 				5047D5C529AFA7160021832F /* Preview Content */,
+				5047D5E929AFA8530021832F /* LocationHandler.swift */,
+				505E568229B10C16008B7A38 /* StateController.swift */,
 			);
 			path = MusicByLocation;
 			sourceTree = "<group>";
@@ -125,6 +139,23 @@
 				5047D5DC29AFA7170021832F /* MusicByLocationUITestsLaunchTests.swift */,
 			);
 			path = MusicByLocationUITests;
+			sourceTree = "<group>";
+		};
+		505E567F29B10AB6008B7A38 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				505E568029B10AE0008B7A38 /* CLPlacemark.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		505E568429B11FD6008B7A38 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				505E568929B124F9008B7A38 /* ArtistResponse.swift */,
+				505E568729B12011008B7A38 /* Artist.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +288,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5047D5EA29AFA8530021832F /* LocationHandler.swift in Sources */,
 				5047D5C229AFA7140021832F /* ContentView.swift in Sources */,
 				5047D5C029AFA7140021832F /* MusicByLocationApp.swift in Sources */,
+				505E568129B10AE0008B7A38 /* CLPlacemark.swift in Sources */,
+				505E568329B10C16008B7A38 /* StateController.swift in Sources */,
+				505E568A29B124F9008B7A38 /* ArtistResponse.swift in Sources */,
+				505E568829B12011008B7A38 /* Artist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +456,7 @@
 				DEVELOPMENT_TEAM = XP9BJ9QH4X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to find your favourite tunes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -449,6 +486,7 @@
 				DEVELOPMENT_TEAM = XP9BJ9QH4X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to find your favourite tunes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
