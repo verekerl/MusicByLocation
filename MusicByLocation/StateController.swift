@@ -10,11 +10,11 @@ import Foundation
 class StateController: ObservableObject {
     let locationHandler: LocationHandler = LocationHandler()
     let iTunesAdaptor = ITunesAdaptor()
-    @Published var artistsByLocation: String = ""
+    @Published var artistsByLocation: [String] = [""]
     
     var lastKnownLocation: String = "" {
         didSet {
-            iTunesAdaptor.getArtists(search: lastKnownLocation,  completion: updateArtitsByLocation)
+            iTunesAdaptor.getArtists(target: lastKnownLocation,  completion: updateArtitsByLocation)
         }
     }
     
@@ -30,7 +30,7 @@ class StateController: ObservableObject {
     func updateArtitsByLocation(artists: [Artist]?) {
         let names  =  artists?.map { return $0.name }
         DispatchQueue.main.async {
-            self.artistsByLocation = names?.joined(separator: ", ") ?? "Error Finding Artists From Your Location"
+            self.artistsByLocation = names ?? ["Error finding artists from your location"]
         }
     }
 }
